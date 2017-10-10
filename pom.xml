@@ -180,7 +180,20 @@
 			</extension>
 		</extensions>
 		<plugins>
-			<plugin>
+			<!-- Newly added -->
+         	<plugin>
+           		<groupId>com.github.github</groupId>
+          		 <artifactId>site-maven-plugin</artifactId>
+           		<version>0.10</version>
+           	<dependencies>
+              		<dependency>
+    			<groupId>org.eclipse.mylyn.github</groupId>
+    			<artifactId>org.eclipse.egit.github.core</artifactId>
+    			<version>3.1.0.201310021548-r</version>
+			</dependency>
+           	 </dependencies>
+      	 	</plugin>
+		<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
 				<version>1.6.7</version>
@@ -363,19 +376,7 @@
 					</execution>
 				</executions>
 			</plugin>
-        <!-- Newly added -->
-         <plugin>
-           <groupId>com.github.github</groupId>
-           <artifactId>site-maven-plugin</artifactId>
-           <version>0.10</version>
-           <dependencies>
-              <dependency>
-    			<groupId>org.eclipse.mylyn.github</groupId>
-    			<artifactId>org.eclipse.egit.github.core</artifactId>
-    			<version>3.1.0.201310021548-r</version>
-		</dependency>
-            </dependencies>
-       </plugin>
+        
 		</plugins>
 	</build>
 	<reporting>
